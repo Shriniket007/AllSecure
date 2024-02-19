@@ -1,0 +1,117 @@
+
+<?php
+    session_start();
+    if(!isset($_SESSION['username'])){
+        header('location:login.php');
+    }
+?> 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire</title>
+    <link rel="shortcut icon" type="image/png" href="./Images/shield.png">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .firemain {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(169 66 237);;
+        }
+
+        .fire {
+            width: 40%;
+            border: 2px solid rgb(99, 97, 97);
+            padding: 0.5rem;
+            border-radius: 1rem;
+            background-color: rgb(230, 227, 227);
+        }
+
+        .fire a {
+            text-decoration: none;
+            font-size: 1.8rem;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="userinfo">
+            <h4><i class="fa fa-user"></i>
+                <?php echo $_SESSION['username']; ?>
+            </h4>
+        </div>
+
+        <div class="logout">
+            <a href="logout.php">Logout</a>
+        </div>
+        <div class="ham" id="ham">
+            <i class="fas fa-bars" class="ham" id="ham"></i>
+        </div>
+
+        <nav class="nav-bar" id="nav-bar">
+            <div class="close" id="close">
+                <i class="fas fa-times " id='close-navbar'></i>
+            </div>
+
+            <div class="nav-logo">
+                <!-- <i class="fas fa-shield-alt fa-2x"></i> -->
+                <img src="./Images/verified.png" alt="">
+                <h3>ALL SECURE</h3>
+            </div>
+            <h5>Be Assured, Be Secured</h5>
+
+            <div class="nav-list">
+                <ul>
+                    <li><i class="fas fa-home fa-1x"></i><a href="index.html">Home</a></li>
+                    <!-- <li><i class="fas fa-address-card"></i><a href="about.html">About Us</a></li> -->
+                    <li><i class="fas fa-female fa-1x"></i><a href="./women_security.html">Women Security</a></li>
+                    <li><i class="fas fa-fire-extinguisher"></i><a href="./fire_security.html">Fire Emergency</a></li>
+                    <li><i class="fas fa-search-location"></i><a href="./vehicle_security.html">Vehicle Search</a></li>
+                    <li><i class="fas fa-clinic-medical"></i><a href="./medical_security.html">Health Emergency</a></li>
+                    <li><i class="fas fa-phone"></i><a href="./emergency_number.html">Emergency NO.</a></li>
+                    <li><i class="far fa-address-book"></i><a href="#">Contact Us</a></li>
+
+                </ul>
+            </div>
+
+            <div class='nav-buttons'>
+                <a href="signin.html"><button><i class="fas fa-sign-in-alt"></i>Log in</button></a>
+                <a href="signup.html"><button><i class="fas fa-edit"></i>Register</button></a>
+            </div>
+        </nav>
+        <div class="firemain">
+            <button class="fire">
+                <a href="https://www.pcmcindia.gov.in/departments-details.php?Id=34" target="_blank">PCMC</a>
+                <h2>Pimpri-Chinchwad Municipal Corporation.</h2>
+            </button>
+            <button class="fire">
+                <a href="https://www.pmc.gov.in/en/firebrigade-stations" target="_blank">PMC</a>
+                <h2>Pune Municipal Corporation</h2>
+            </button>
+            <button class="fire">
+                <a href="https://smkc.gov.in/SMKCSection.aspx?deptcode=11" target="_blank">SMC</a>
+                <h2>Sangli Municipal Corporation</h2>
+            </button>
+        </div>
+        <script src="index.js"></script>
+    <script src="https://kit.fontawesome.com/3d43d3975e.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
